@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝙆𝙀𝙆 𝕏 𝙋𝙧𝙤𝙟𝙚𝙘𝙩𝙨</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        .konten {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .logo-dan-tombol { /* Style untuk container logo dan tombol baru */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-dan-tombol .tombol { /* Style tambahan untuk tombol di bawah logo (jarak) */
+            margin-top: 10px;
+        }
+
+        .nama {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .moto {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .tombol-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tombol {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #0410e9;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .tombol:hover {
+            background-color: #0410e9;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Style Notifikasi (tidak berubah) */
+        .notifikasi {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: #ff0000;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            animation: fadeout 4s forwards;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        @keyframes fadeout {
+            0% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; display: none; }
+        }
+    </style>
+    <script>
+        // URL API
+        const apiUrl = "https://api-bdc.net/data/client-ip";
+
+        // Fungsi untuk menampilkan notifikasi
+        function tampilkanNotifikasi(ip, tipe) {
+            const notifikasi = document.createElement('div');
+            notifikasi.className = 'notifikasi';
+            notifikasi.innerHTML = `Ip Anda <br> ${ip} `;
+            document.body.appendChild(notifikasi);
+
+            // Hapus notifikasi setelah beberapa detik
+            setTimeout(() => {
+                notifikasi.remove();
+            }, 4000);
+        }
+
+        // Mengambil data IP menggunakan Fetch API
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                // Tampilkan notifikasi dengan data IP
+                tampilkanNotifikasi(data.ipString, data.ipType);
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+    </script>
+</head>
+<body>
+    <div class="konten">
+        <div class="logo-dan-tombol">
+            <img src="logo.png" class="logo" alt="Logo">
+            <button class="tombol" onclick="window.location.href='https://skuyykek69.github.io/asmaraloka';">Journey</button>
+        </div>
+        <h1 class="nama">Web Bucin</h1>
+        <p class="moto">Hasil karya Fajar Onky H., tempat di mana kata-kata merangkai kisah cinta. tidak akan ada cinta yang tiba-tiba sempurna tapi Cinta Terbaik terbentuk karena melalui proses panjang yang penuh lika-liku ujian perjalan hidup. ❤️</p>
+        <div class="tombol-container">
+            <button class="tombol" onclick="window.location.href='https://thisonky.github.io/pesan/';">Pesan</button>
+            <button class="tombol" onclick="window.location.href='https://thisonky.github.io/projects/maafku/';">Maafku</button>
+            <button class="tombol" onclick="window.location.href='https://thisonky.github.io/projects/bikinkesal/';">Bikin Kesal</button>
+            <button class="tombol" onclick="window.location.href='https://thisonky.github.io/projects/terimakasih/';">Terimakasih</button>
+        </div>
+        <p class="copyright">&copy; 2025 𝙆𝙀𝙆 𝕏 𝙋𝙧𝙤𝙟𝙚𝙘𝙩𝙨</p>
+    </div>
+</body>
+</html>
