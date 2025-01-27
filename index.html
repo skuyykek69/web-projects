@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝙆𝙀𝙆 𝕏 𝙋𝙧𝙤𝙟𝙚𝙘𝙩𝙨</title>
+    <title>Fajar Onky H</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,49 +12,57 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             min-height: 100vh;
             background-color: #f9f9f9;
         }
 
         .konten {
-    max-width: 800px;
-}
+            max-width: 800px;
+            width: 90%; /* Lebar responsif */
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 10px;
+            box-sizing: border-box; /* Penting untuk padding */
+        }
 
-.logo {
-    max-width: 100%; /* Gambar responsif */
-    height: auto;
-    border-radius: 50%;
-    object-fit: cover;
-}
+        .logo-dan-tombol {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
 
-@media (max-width: 768px) { /* Tablet */
-    .konten {
-        max-width: 90%;
-        padding: 10px;
-    }
-    .tombol-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
+        .logo {
+            max-width: 150px; /* Ukuran logo responsif */
+            height: auto;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px; /* Jarak antara logo dan tombol */
+        }
 
-@media (max-width: 480px) { /* Mobile */
-    .konten {
-        max-width: 95%;
-        padding: 5px;
-    }
-    .nama {
-        font-size: 20px;
-    }
-    .moto {
-        font-size: 16px;
-    }
-    .tombol-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
+        .nama {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .moto {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .tombol-container {
+            display: flex;
+            flex-wrap: wrap; /* Memungkinkan tombol wrap ke baris baru */
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
 
         .tombol {
             padding: 10px 20px;
@@ -64,10 +72,11 @@
             color: #fff;
             cursor: pointer;
             transition: background-color 0.3s;
+            box-sizing: border-box; /* Penting untuk padding */
         }
 
         .tombol:hover {
-            background-color: #0410e9;
+            background-color: #030dc2; /* Warna hover sedikit lebih gelap */
         }
 
         .copyright {
@@ -77,7 +86,7 @@
             color: #666;
         }
 
-        /* Style Notifikasi (tidak berubah) */
+                /* Style Notifikasi (tidak berubah) */
         .notifikasi {
             position: fixed;
             bottom: 20px;
@@ -98,8 +107,35 @@
             80% { opacity: 1; }
             100% { opacity: 0; display: none; }
         }
+
+        /* MEDIA QUERIES */
+        @media (max-width: 768px) { /* Tablet */
+            .konten {
+                padding: 15px; /* Kurangi padding */
+            }
+            .tombol-container {
+                flex-direction: column; /* Tombol jadi vertikal */
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) { /* Mobile */
+            .konten {
+                padding: 10px; /* Kurangi padding lagi */
+            }
+            .nama {
+                font-size: 20px;
+            }
+            .moto {
+                font-size: 16px;
+            }
+                        .tombol-container {
+                flex-direction: column; /* Tombol jadi vertikal */
+                align-items: center;
+            }
+        }
     </style>
-    <script>
+        <script>
         // URL API
         const apiUrl = "https://api-bdc.net/data/client-ip";
 
@@ -135,9 +171,9 @@
             <button class="tombol" onclick="window.location.href='https://skuyykek69.github.io/asmaraloka';">Journey</button>
         </div>
         <h1 class="nama">Web Bucin</h1>
-        <p class="moto">Hasil karya Fajar Onky H. <br/>tempat di mana kata-kata merangkai kisah cinta. tidak akan ada cinta yang tiba-tiba sempurna tapi Cinta Terbaik terbentuk karena melalui proses panjang yang penuh lika-liku ujian perjalan hidup ❤️</p>
+        <p class="moto">Hasil karya Fajar Onky H. <br/>tempat di mana kata-kata merangkai kisah cinta. Temukan inspirasi, kehangatan, dan keindahan di setiap sudutnya. ❤️</p>
         <div class="tombol-container">
-            <button class="tombol" onclick="window.location.href='https://thisonky.github.io/pesan/';">Pesan</button>
+            <button class="tombol" onclick="window.location.href='https://thisonky.github.io/pesan/';">pesan</button>
             <button class="tombol" onclick="window.location.href='https://thisonky.github.io/projects/maafku/';">Maafku</button>
             <button class="tombol" onclick="window.location.href='https://thisonky.github.io/projects/bikinkesal/';">Bikin Kesal</button>
             <button class="tombol" onclick="window.location.href='https://thisonky.github.io/projects/terimakasih/';">Terimakasih</button>
