@@ -18,54 +18,43 @@
         }
 
         .konten {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            border-radius: 10px;
-        }
+    max-width: 800px;
+}
 
-        .logo {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 20px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
+.logo {
+    max-width: 100%; /* Gambar responsif */
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
-        .logo-dan-tombol { /* Style untuk container logo dan tombol baru */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+@media (max-width: 768px) { /* Tablet */
+    .konten {
+        max-width: 90%;
+        padding: 10px;
+    }
+    .tombol-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 
-        .logo-dan-tombol .tombol { /* Style tambahan untuk tombol di bawah logo (jarak) */
-            margin-top: 10px;
-        }
-
-        .nama {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .moto {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .tombol-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
+@media (max-width: 480px) { /* Mobile */
+    .konten {
+        max-width: 95%;
+        padding: 5px;
+    }
+    .nama {
+        font-size: 20px;
+    }
+    .moto {
+        font-size: 16px;
+    }
+    .tombol-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 
         .tombol {
             padding: 10px 20px;
@@ -146,7 +135,7 @@
             <button class="tombol" onclick="window.location.href='https://skuyykek69.github.io/asmaraloka';">Journey</button>
         </div>
         <h1 class="nama">Web Bucin</h1>
-        <p class="moto">Hasil karya Fajar Onky H., tempat di mana kata-kata merangkai kisah cinta. tidak akan ada cinta yang tiba-tiba sempurna tapi Cinta Terbaik terbentuk karena melalui proses panjang yang penuh lika-liku ujian perjalan hidup. ❤️</p>
+        <p class="moto">Hasil karya Fajar Onky H. <br/>tempat di mana kata-kata merangkai kisah cinta. tidak akan ada cinta yang tiba-tiba sempurna tapi Cinta Terbaik terbentuk karena melalui proses panjang yang penuh lika-liku ujian perjalan hidup ❤️</p>
         <div class="tombol-container">
             <button class="tombol" onclick="window.location.href='https://thisonky.github.io/pesan/';">Pesan</button>
             <button class="tombol" onclick="window.location.href='https://thisonky.github.io/projects/maafku/';">Maafku</button>
