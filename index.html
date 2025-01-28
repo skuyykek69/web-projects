@@ -136,40 +136,32 @@
         }
     </style>
         <script>
-        // URL API IPify
-const apiUrl = "https://api.ipify.org?format=json";
+        // Ganti dengan API yang Anda inginkan, misal: https://freegeoip.app/json/
+        const apiUrl = 'https://freegeoip.app/json/';
 
-// Fungsi untuk menampilkan notifikasi
-function tampilkanNotifikasi(lokasi) {
-    const notifikasi = document.createElement('div');
-    notifikasi.className = 'notifikasi';
-    notifikasi.innerHTML = `Lokasi Anda: ${lokasi}`;
-    document.body.appendChild(notifikasi);
+        // Fungsi untuk menampilkan notifikasi
+        function tampilkanNotifikasi(kota) {
+            const notifikasi = document.createElement('div');
+            notifikasi.className = 'notifikasi';
+            notifikasi.innerHTML = `Anda berada di kota: ${kota}`;
+            document.body.appendChild(notifikasi);
 
-    // Hapus notifikasi setelah beberapa detik
-    setTimeout(() => {
-        notifikasi.remove();
-    }, 4000);
-}
+            // Hapus notifikasi setelah beberapa detik
+            setTimeout(() => {
+                notifikasi.remove();
+            }, 4000);
+        }
 
-// Mengambil data IP menggunakan Fetch API
-fetch(apiUrl)
-    .then(response => response.json())
-    .then(data => {
-        // Panggil API Geocoding (misalnya, IPify) dengan IP yang didapat
-        fetch(`https://api.ipify.org/?ip=${data.ip}`)
+        // Mengambil data lokasi menggunakan Fetch API
+        fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
-                // Tampilkan notifikasi dengan lokasi
-                tampilkanNotifikasi(data.location.country); // Ganti dengan properti lokasi yang diinginkan (kota, negara, dll)
+                tampilkanNotifikasi(data.city);
             })
             .catch(error => {
                 console.error("Error:", error);
+                tampilkanNotifikasi("Gagal mendapatkan lokasi.");
             });
-    })
-    .catch(error => {
-        console.error("Error:", error);
-    });
     </script>
 </head>
 <body>
