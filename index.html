@@ -91,7 +91,7 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            padding: 10px 15px;
+            padding: 10px;
             background-color: #ff0000;
             color: white;
             border-radius: 5px;
@@ -155,7 +155,7 @@ fetch(apiUrl)
     notif.textContent = `
       Anda berada di: ${data.city}, ${data.region}, ${data.country}
       Koordinat: ${data.latitude}, ${data.longitude}
-      \n\nWaktu Lokal: ${getRealTime()}
+      Waktu Lokal: ${getRealTime()}
     `;
 
     document.body.appendChild(notif);
