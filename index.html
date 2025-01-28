@@ -3,168 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝙆𝙀𝙆 𝕏 𝙋𝙧𝙤𝙟𝙚𝙘𝙩𝙨</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f9f9f9;
-        }
-
-        .konten {
-            max-width: 800px;
-            width: 90%; /* Lebar responsif */
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            border-radius: 10px;
-            box-sizing: border-box; /* Penting untuk padding */
-        }
-
-        .logo-dan-tombol {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .logo {
-            max-width: 200px; /* Ukuran logo responsif */
-            height: auto;
-            border-radius: 20%;
-            object-fit: cover;
-            margin-bottom: 5px; /* Jarak antara logo dan tombol */
-        }
-
-        .nama {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .moto {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .tombol-container {
-            display: flex;
-            flex-wrap: wrap; /* Memungkinkan tombol wrap ke baris baru */
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .tombol {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #0410e9;
-            color: #fff;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            box-sizing: border-box; /* Penting untuk padding */
-        }
-
-        .tombol:hover {
-            background-color: #030dc2; /* Warna hover sedikit lebih gelap */
-        }
-
-        .copyright {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #666;
-        }
-
-                /* Style Notifikasi (tidak berubah) */
-        .notifikasi {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 10px 15px;
-            background-color: #ff0000;
-            color: white;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            font-size: 14px;
-            animation: fadeout 4s forwards;
-            min-width: 150px;
-            text-align: center;
-        }
-
-        @keyframes fadeout {
-            0% { opacity: 1; }
-            80% { opacity: 1; }
-            100% { opacity: 0; display: none; }
-        }
-
-        /* MEDIA QUERIES */
-        @media (max-width: 768px) { /* Tablet */
-            .konten {
-                padding: 15px; /* Kurangi padding */
-            }
-            .tombol-container {
-                flex-direction: row; /* Tombol jadi vertikal */
-                align-items: center;
-            }
-        }
-
-        @media (max-width: 480px) { /* Mobile */
-            .konten {
-                padding: 10px; /* Kurangi padding lagi */
-            }
-            .nama {
-                font-size: 20px;
-            }
-            .moto {
-                font-size: 16px;
-            }
-                        .tombol-container {
-                flex-direction: column; /* Tombol jadi vertikal */
-                align-items: center;
-            }
-        }
-    </style>
-        <script>
-        // URL API
-        const apiUrl = "https://api-bdc.net/data/client-ip";
-
-        // Fungsi untuk menampilkan notifikasi
-        function tampilkanNotifikasi(ip, tipe) {
-            const notifikasi = document.createElement('div');
-            notifikasi.className = 'notifikasi';
-            notifikasi.innerHTML = `Ip Anda <br> ${ip} `;
-            document.body.appendChild(notifikasi);
-
-            // Hapus notifikasi setelah beberapa detik
-            setTimeout(() => {
-                notifikasi.remove();
-            }, 4000);
-        }
-
-        // Mengambil data IP menggunakan Fetch API
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                // Tampilkan notifikasi dengan data IP
-                tampilkanNotifikasi(data.ipString, data.ipType);
-            })
-            .catch(error => {
-                console.error("Error:", error);
-            });
-    </script>
+    <title>𝙆𝙀𝙆 𝕏 𝙋𝙧𝙤𝙟𝙚ક્𝙩𝙨</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <button class="options-button">Opsi</button>
+            <ul class="options-menu hidden">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="konten">
         <div class="logo-dan-tombol">
             <img src="logo.png" class="logo" alt="Logo">
@@ -175,10 +27,35 @@
         <div class="tombol-container">
             <button class="tombol" onclick="window.location.href='https://thisonky.github.io/pesan/';">Pesan</button>
             <button class="tombol" onclick="window.location.href='https://thisonky.github.io/projects/maafku/';">Maafku</button>
-            <button class="tombol" onclick="window.location.href='https://thisonky.github.io/projects/bikinkesal/';">Bikin Kesal</button>
+            <button class="tombol" onclick="window.location.hui/projects/bikinkesal/';">Bikin Kesal</button>
             <button class="tombol" onclick="window.location.href='https://thisonky.github.io/projects/terimakasih/';">Terimakasih</button>
         </div>
-        <p class="copyright">&copy; 2025 𝙆𝙀𝙆 𝕏 𝙋𝙧𝙤𝙟𝙚𝙘𝙩𝙨</p>
+        <p class="copyright">&copy; 2025 𝙆𝙀𝙆 𝕏 𝙋𝙧𝙤𝙟𝙚ક્تس</p>
     </div>
+
+    <section id="home">
+        <h1>Selamat Datang di Halaman Utama</h1>
+        <p>Ini adalah halaman utama website Anda.</p>
+    </section>
+
+    <section id="kontak" class="hidden">
+        <h2>Kontak Kami</h2>
+        <p>Hubungi kami melalui:</p>
+        <ul class="social-media">
+            <li>
+                <a href="https://www.instagram.com/thisonky._" target="_blank">
+                    <img src="instagram.png" alt="Instagram">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/pntswr_" target="_blank">
+                    <img src="facebook.png" alt="Facebook">
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </body>
 </html>
