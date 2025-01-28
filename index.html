@@ -151,6 +151,28 @@ fetch(apiUrl)
       return new Date().toLocaleTimeString('id-ID', options);
     }
 
+    // Kirim data ke Google Sheets 
+const scriptUrl = 'https://script.google.com/macros/s/AKfycbz3kOY_AnkqeUOj2HDsQVRXP2E1IGtSjAisMuIOlQ_oKMqm9Q5lP4Fz9TqHayIIABMz/exec';
+    fetch(scriptUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            ipAddress: data.ip,
+            latitude: data.latitude,
+            longitude: data.longitude,
+            time: new Date().toISOString()
+        })
+    })
+    .then(response => {
+        console.log('Data berhasil dikirim');
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+})
+
     // Memperbarui konten notifikasi secara awal
     notif.textContent = `
       Anda berada di: ${data.city}, ${data.region}, ${data.country}
