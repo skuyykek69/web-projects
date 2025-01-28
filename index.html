@@ -143,7 +143,7 @@
         function tampilkanNotifikasi(kota) {
             const notifikasi = document.createElement('div');
             notifikasi.className = 'notifikasi';
-            notifikasi.innerHTML = `Anda berada di kota: ${result.city}`;
+            notifikasi.innerHTML = `Anda berada di kota: ${kota}`;
             document.body.appendChild(notifikasi);
 
             // Hapus notifikasi setelah beberapa detik
@@ -152,16 +152,18 @@
             }, 4000);
         }
 
-        // Mengambil data lokasi menggunakan Fetch API
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                tampilkanNotifikasi(data.city);
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                tampilkanNotifikasi("Gagal mendapatkan lokasi.");
-            });
+// ... pengambilan fetch 
+
+fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+        if (data.city) {
+            tampilkanNotifikasi(`Anda berada di kota: ${data.city}`);
+        } else {
+            console.error("Gagal mendapatkan data kota.");
+            tampilkanNotifikasi("Gagal mendapatkan lokasi.");
+        }
+    })
     </script>
 </head>
 <body>
