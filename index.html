@@ -139,31 +139,22 @@
         // Ganti dengan API yang Anda inginkan, misal: https://freegeoip.app/json/
         const apiUrl = 'https://freegeoip.app/json/';
 
-        // Fungsi untuk menampilkan notifikasi
-        function tampilkanNotifikasi(kota) {
-            const notifikasi = document.createElement('div');
-            notifikasi.className = 'notifikasi';
-            notifikasi.innerHTML = `Anda berada di kota: ${kota}`;
-            document.body.appendChild(notifikasi);
-
-            // Hapus notifikasi setelah beberapa detik
-            setTimeout(() => {
-                notifikasi.remove();
-            }, 4000);
-        }
-
-// ... pengambilan fetch 
-
-fetch(apiUrl)
-    .then(response => response.json())
-    .then(data => {
-        if (data.city) {
-            tampilkanNotifikasi(`Anda berada di kota: ${data.city}`);
-        } else {
-            console.error("Gagal mendapatkan data kota.");
-            tampilkanNotifikasi("Gagal mendapatkan lokasi.");
-        }
-    })
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const notif = document.createElement('div');
+                notif.classList.add('notifikasi');
+                notif.textContent = `Anda berada di kota: ${data.city || 'Tidak dapat ditentukan'}`;
+                document.body.appendChild(notif);
+                setTimeout(() => notif.remove(), 4000);
+            })
+            .catch(error => {
+                console.error('Error fetching location:', error);
+                const notif = document.createElement('div');
+                notif.classList.add('notifikasi');
+                notif.textContent = 'Terjadi kesalahan saat mengambil lokasi.';
+                document.body.appendChild(notif);
+            });
     </script>
 </head>
 <body>
