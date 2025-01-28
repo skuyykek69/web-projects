@@ -130,7 +130,7 @@
                 font-size: 16px;
             }
                         .tombol-container {
-                flex-direction: column; /* Tombol jadi vertikal */
+                flex-direction: row; /* Tombol jadi vertikal */
                 align-items: center;
             }
         }
@@ -154,8 +154,8 @@ fetch(apiUrl)
     // Memperbarui konten notifikasi secara awal
     notif.textContent = `
       Anda berada di: ${data.city}, ${data.region}, ${data.country}
-      Koordinat: ${data.latitude}, ${data.longitude} \n\n
-      Waktu Lokal: ${getRealTime()}
+      Koordinat: ${data.latitude}, ${data.longitude}
+      \n\nWaktu Lokal: ${getRealTime()}
     `;
 
     document.body.appendChild(notif);
